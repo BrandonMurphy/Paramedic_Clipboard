@@ -7,6 +7,7 @@ import android.view.Menu;
 
 public class HomeActivity extends Activity {
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
