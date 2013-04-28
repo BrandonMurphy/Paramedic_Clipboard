@@ -23,45 +23,62 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONTokener;
 
+import android.util.Log;
+
 import com.home.reports.Report;
 
 public final class JsonParser {
-	
+
 	private static ArrayList<Report> reportList;
 	private String[] titles;
 	private String[] subtitles;
 	public String myURI = "http://paramedic-clipboard.herokuapp.com/report_data.json";
-	
+
 	//The constructor simply calls the getHttpResponse()
 	public JsonParser() throws UnsupportedEncodingException, IllegalStateException, IOException, JSONException
 	{
 		getHttpResponse();
 	}
-	
 	/*
 	 *  This method returns an HttpResponse
 	 */
-	public void getHttpResponse() throws UnsupportedEncodingException, IllegalStateException, IOException, JSONException{
+	public void getHttpResponse(){
 		HttpResponse response = null;
-		
-		/* Create the HttpClient and pull the data from the URI */
-		try {        
-		        HttpClient client = new DefaultHttpClient();
-		        HttpGet request = new HttpGet();
-		        request.setURI(new URI(myURI));
-		        response = client.execute(request);
-		    } catch (URISyntaxException e) {
-		        e.printStackTrace();
-		    } catch (ClientProtocolException e) {
-		        // TODO Auto-generated catch block
-		        e.printStackTrace();
-		    } catch (IOException e) {
-		        // TODO Auto-generated catch block
-		        e.printStackTrace();
-		    }
-		
-			/* send the HttpResponse variable to the  */
+		HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet();
+        try {
+			request.setURI(new URI("http://paramedic-clipboard.herokuapp.com/report_data.json"));
+			response = client.execute(request);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        if(response!= null)
+			Log.i(response.toString(), "testing response.toString()");
+        
+        //call to populate the list
+        try {
 			populateList(response);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/*
@@ -72,20 +89,20 @@ public final class JsonParser {
 	{	
 		/* create buffer reader */
 		BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
-		
+
 		/* create String Builder to build our string from the HttpResponse */
 		StringBuilder builder = new StringBuilder();
-		
+
 		/*  Create the string by appending each line with a \n symbol. */
 		for (String line = null; (line = reader.readLine()) != null;) {
 		    builder.append(line).append("\n");
 		}
-		
+
 		/* convert the String builder variable to a JSONtokener 
 		 * look at : http://www.json.org/javadoc/org/json/JSONTokener.html
 		 * */
 		JSONTokener tokener = new JSONTokener(builder.toString());
-		
+
 		/* Create the array */
 		JSONArray jsonArray = null;
 		try {
@@ -94,11 +111,11 @@ public final class JsonParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		/* Call the method to initialize the ArrayList from the data given by the JSONArray -> jsonArray */
 		initializeList(jsonArray);
 	}
-	
+
 	/* This method will handle the parsing of the JSONArray and it will handle the populating of the ArrayList reportList
 	 * Parameters: JSONArray array -> json array that holds 
 	 * 
@@ -107,13 +124,13 @@ public final class JsonParser {
 	{
 		/* The ArrayList that will hold all the Reports objects */
 		reportList = new ArrayList<Report>();
-		
+
 		/* The String array for Titles initialization */
 		titles = new String[array.length() + 1];
-		
+
 		/* The String array for Subtitles initialization */
 		subtitles = new String[array.length() + 1];
-		
+
 		/* Loop through each array element of the JSONArray and get that JSONobject  */
 		for(int i=0; i<array.length(); i++)
 		{	
@@ -131,12 +148,12 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("sex").toString(),
 					array.getJSONObject(i).getString("type_of_incident").toString(),
 					array.getJSONObject(i).getString("updated_at").toString(),
-					
+
 					array.getJSONObject(i).getString("DOB").toString(),
 					array.getJSONObject(i).getString("SSAN").toString(),
 					array.getJSONObject(i).getString("address").toString(),
 					array.getJSONObject(i).getString("phone").toString(),
-					
+
 					array.getJSONObject(i).getString("beginning_odometer").toString(),
 					array.getJSONObject(i).getString("ending_odometer").toString(),
 					array.getJSONObject(i).getString("alternate_Contact").toString(),
@@ -144,7 +161,7 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("insurance_1").toString(),
 					array.getJSONObject(i).getString("insurance_2").toString(),
 					array.getJSONObject(i).getString("Past_Medical_History").toString(),
-					
+
 					array.getJSONObject(i).getString("Medications").toString(),
 					array.getJSONObject(i).getString("Allergies").toString(),
 					array.getJSONObject(i).getString("Blood_Pressure").toString(),
@@ -152,7 +169,7 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("Respiratory_rate").toString(),
 					array.getJSONObject(i).getString("GCS").toString(),
 					array.getJSONObject(i).getString("Blood_sugar").toString(),
-					
+
 					array.getJSONObject(i).getString("SpO2").toString(),
 					array.getJSONObject(i).getString("EtCO2").toString(),
 					array.getJSONObject(i).getString("HEENT").toString(),
@@ -160,7 +177,7 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("Chest").toString(),
 					array.getJSONObject(i).getString("Abdomen").toString(),
 					array.getJSONObject(i).getString("Back").toString(),
-					
+
 					array.getJSONObject(i).getString("Extremities").toString(),
 					array.getJSONObject(i).getString("Neurologic").toString(),
 					array.getJSONObject(i).getString("Treatment_Time").toString(),
@@ -171,24 +188,24 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("Narrative").toString(),
 					array.getJSONObject(i).getString("Exam_Notes").toString()
 					));
-			
+
 			/* Depending on this, this is what the title will display in the Listview */
 			titles[i] = array.getJSONObject(i).getString("type_of_incident").toString();
 			subtitles[i] = array.getJSONObject(i).getString("id").toString();
 		}
 	}
-	
+
 	/* This method returns the ArrayList that holds all the reports. */
 	public ArrayList<Report> getArrayList()
 	{
 		return reportList;
 	}
-	
+
 	/* Used to populate the titles on the ListView */
 	public String[] getTitles(){
 		return this.titles;
 	}
-	
+
 	/* Used to populate the subtitles on the ListView */
 	public String[] getSubtitles(){
 		return this.subtitles;
