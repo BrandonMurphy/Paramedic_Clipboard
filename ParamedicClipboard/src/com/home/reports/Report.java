@@ -581,7 +581,7 @@ public class Report implements Serializable {
 
 	public String getHTMLString() {
 		// TODO Auto-generated method stub
-		String string = "<b>Name: </b>" + " " + this.getName() + "<br/><br/>" 
+		String string = "<font color=\"white\"><b>Name: </b>" + " " + this.getName() + "</font><br/><br/>"
 						+ "<b>Sex: </b>" + " " + this.getSex() + "<br/><br/>"
 						;
 		return string;

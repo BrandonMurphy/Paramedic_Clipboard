@@ -3,28 +3,32 @@
 <!-- Layout for individual news entries in a list -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@color/Red" >
             
     <!-- Title of the news entry -->
+
     <TextView
-        
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginTop="5dp"
-        android:textSize="20sp"
-        android:textStyle="bold" 
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_marginTop="5dp"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        android:textStyle="bold" />
     
     <!-- Subtitle contains author and date -->
-    <TextView
 
+    <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:textSize="16sp" 
+        android:layout_height="wrap_content"
         android:layout_below="@id/title"
-    	android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:textColor="@color/White"
+        android:textSize="16sp" />
+
     	<!--  android:paddingBottom="2dp"--> 
 </RelativeLayout>
