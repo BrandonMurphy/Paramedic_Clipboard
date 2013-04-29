@@ -1,26 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/DarkRed" >
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textColor="@color/White"
-    android:background="@color/Red" >
+    android:layout_above="@+id/back"
+    android:background="@color/DarkRed"
+    android:paddingBottom="@dimen/eight"
+    android:textColor="@color/White" >
 
-    <LinearLayout
-        android:id="@+id/details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Red"
-        android:textColor="@color/White" >
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="288dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/eight"
-            android:layout_marginTop="@dimen/twentyTwo"
-            android:layout_weight="0.14"
-            android:background="@color/Snow"
-            android:text="@string/reviewButton" />
-    </LinearLayout>
-    
-
+<LinearLayout
+android:id="@+id/details"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/DarkRed"
+android:orientation="vertical"
+android:textColor="@color/White" >
+</LinearLayout>
 </ScrollView>
+<Button
+android:id="@+id/back"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_alignParentLeft="true"
+android:layout_marginBottom="@dimen/eight"
+android:layout_marginLeft="@dimen/eighteen"
+android:background="@color/Snow"
+android:paddingLeft="@dimen/fourty"
+android:paddingRight="@dimen/thirty"
+android:text="@string/backButton" />
+<Button
+android:id="@+id/submit"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_alignParentRight="true"
+android:layout_marginBottom="@dimen/eight"
+android:layout_marginRight="@dimen/eighteen"
+
+android:background="@color/Snow"
+android:gravity="center_vertical|center_horizontal"
+android:paddingLeft="@dimen/thirty"
+android:paddingRight="@dimen/twentyTwo"
+android:text="@string/submitButton" />
+
+</RelativeLayout>

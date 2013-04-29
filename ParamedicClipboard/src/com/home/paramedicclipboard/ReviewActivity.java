@@ -28,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,18 +85,29 @@ public class ReviewActivity extends Activity{
 		// pass the html string we got and display it as the text
 		text.setText(Html.fromHtml(string));
 		//set the parameters of the textview
-		text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.5f));
+		text.setLayoutParams(new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 		//add the textview to the view.
 		linearLayout.addView(text);
 
 		ActionBar actionBar = getActionBar();
 		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setTitle("Review Report");
 
 		//set the on click listener for the submit button
 		Button review = (Button)findViewById(R.id.submit);
 		review.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+
+				//this is an asynchronous call to to send the data to the Database online
 				new ProgressTask(ReviewActivity.this).execute();
+			}
+		});
+
+		//set the on click listener for the submit button
+		Button back = (Button)findViewById(R.id.back);
+		back.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				finish();
 			}
 		});
 	}
@@ -149,6 +161,19 @@ public class ReviewActivity extends Activity{
 				Toast.makeText(context, "Error Loading Data", Toast.LENGTH_LONG).show();
 			}
 			
+			/* Class to assist us in loading the activity */
+			Class editClass = null;
+			try {
+				editClass = Class.forName("com.home.paramedicclipboard.HomeActivity");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			/* Start the new intent and also pass a bundle that will contain the name of the card that was clicked */
+			Intent ourIntent = new Intent(ReviewActivity.this, editClass);
+			//start the activity
+			startActivity(ourIntent);
+			finish();
 		}
 
 		//this is done in the background to load data.
@@ -164,6 +189,5 @@ public class ReviewActivity extends Activity{
 			return true;
 		}
 	}
-
 }
 

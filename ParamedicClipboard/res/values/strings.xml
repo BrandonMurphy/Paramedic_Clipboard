@@ -93,5 +93,7 @@
     <string name="exam_notes">Exam notes:</string>
     <string name="exam_notesHint">Patient constantly shouts out riddles.</string>
     <string name="reviewButton">Review -></string>
+    <string name="backButton">&lt;-  Back</string>
+    <string name="submitButton">Submit  -&gt;</string>
 
 </resources>

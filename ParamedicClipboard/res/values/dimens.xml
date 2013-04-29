@@ -22,4 +22,5 @@
     <dimen name="button_indent">175dp</dimen>
     <dimen name="negativeFifty">-50dp</dimen>
     <dimen name="negativeTen">-10dp</dimen>
+    <dimen name="fourty">40dp</dimen>
 </resources>

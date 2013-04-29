@@ -72,6 +72,7 @@ public class AddReportActivity extends Activity{
 		
 		ActionBar actionBar = getActionBar();
 	    actionBar.setDisplayHomeAsUpEnabled(true);
+	    actionBar.setTitle("Add Report");
 	}
 
 	@Override

@@ -70,6 +70,7 @@ public class DetailsActivity extends Activity {
 		
 		ActionBar actionBar = getActionBar();
 	    actionBar.setDisplayHomeAsUpEnabled(true);
+	    actionBar.setTitle("Report Details");
 	}
 	
 	//This method handles the click on the Action Bar buttons ( both return and Add New Report + )
