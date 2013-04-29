@@ -113,7 +113,7 @@ public class HomeActivity extends Activity {
 		for(int i = 0; i < reportList.size(); i++) {
 			if(DEBUG)Log.i("getListEntries HomeActivity","Passing through reportlistEntries");
 			entries.add(
-					new List_Item(((Report)reportList.get(i)).getType(), Integer.toString(((Report)reportList.get(i)).getId()), ((Report)reportList.get(i)).getId())
+					new List_Item(((Report)reportList.get(i)).getType(), (((Report)reportList.get(i)).getDate_created()), ((Report)reportList.get(i)).getId())
 					);
 		}
 		return entries;
