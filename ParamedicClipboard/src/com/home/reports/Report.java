@@ -337,6 +337,13 @@ public class Report implements Serializable, Comparable<Report> {
 		this.setName(name);
 	}
 
+	public Report(String name, String ethnicity, String sex, String date)
+	{
+		this.setName(name);
+		this.setSex(sex);
+		this.setEthnicity(ethnicity);
+		this.setDate_created(date);
+	}
 	public Report(
 			String date_created, 
 			String destination,

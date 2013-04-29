@@ -26,6 +26,7 @@ public class ReviewActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		if(DEBUG)Log.i("DetailsACtivity","Passes in the oncreate method");
 		setContentView(R.layout.review);
+		initialize();
 	}
 
 	@Override
@@ -40,7 +41,6 @@ public class ReviewActivity extends Activity{
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		initialize();
 	}
 	
 	//Initializes all components
@@ -53,8 +53,8 @@ public class ReviewActivity extends Activity{
 		TextView text = new TextView(this);
 
 		// function call to get the string in HTML format
-		//String string = report.getHTMLString();
-		String string = "It has loaded !!!. The report name is : " + report.getName();
+		String string = report.getHTMLString();
+		//String string = "It has loaded !!!. The report name is : " + report.getName() + report.getEthnicity() + report.getSex() + report.getDate_created();
 		// error check
 		if(string == null || string == "")
 		{

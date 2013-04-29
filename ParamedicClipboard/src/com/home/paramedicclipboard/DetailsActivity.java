@@ -33,6 +33,7 @@ public class DetailsActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.home, menu);
+	    initialize();
 	    return true;
 	}
 	
@@ -40,7 +41,6 @@ public class DetailsActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		initialize();
 	}
 	
 	//Initializes all components
