@@ -186,7 +186,7 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int add_report=0x7f09005a;
+        public static final int add_report=0x7f09005b;
         public static final int button2=0x7f090056;
         public static final int details=0x7f090057;
         public static final int editText1=0x7f090002;
@@ -231,7 +231,8 @@ public final class R {
         public static final int editText8=0x7f090010;
         public static final int editText9=0x7f090012;
         public static final int reportsList=0x7f090000;
-        public static final int subtitle=0x7f090059;
+        public static final int submit=0x7f090058;
+        public static final int subtitle=0x7f09005a;
         public static final int textView1=0x7f090001;
         public static final int textView10=0x7f090013;
         public static final int textView11=0x7f090015;
@@ -276,7 +277,7 @@ public final class R {
         public static final int textView7=0x7f09000d;
         public static final int textView8=0x7f09000f;
         public static final int textView9=0x7f090011;
-        public static final int title=0x7f090058;
+        public static final int title=0x7f090059;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;

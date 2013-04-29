@@ -38,7 +38,7 @@ public class HomeActivity extends Activity {
 	ListView listview;
 
 	/* Use as a debug starter/stopper */
-	private final boolean DEBUG = true;
+	private final boolean DEBUG = false;
 
 	private MyCustomArrayAdapter adapter = null;
 

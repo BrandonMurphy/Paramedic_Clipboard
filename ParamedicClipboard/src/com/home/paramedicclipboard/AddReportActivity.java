@@ -180,7 +180,6 @@ public class AddReportActivity extends Activity{
         			Log.i("Inside AddReport on click", e.toString());
         		}
             	
-            	
             	//Toast.makeText(AddReportActivity.this, new_report.getHTMLString(), Toast.LENGTH_LONG).show();
             
             	//Class to assist us in loading the activity 

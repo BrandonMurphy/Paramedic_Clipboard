@@ -22,6 +22,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import android.util.Log;
@@ -149,12 +150,10 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("sex").toString(),
 					array.getJSONObject(i).getString("type_of_incident").toString(),
 					array.getJSONObject(i).getString("updated_at").toString(),
-
 					array.getJSONObject(i).getString("DOB").toString(),
 					array.getJSONObject(i).getString("SSAN").toString(),
 					array.getJSONObject(i).getString("address").toString(),
 					array.getJSONObject(i).getString("phone").toString(),
-
 					array.getJSONObject(i).getString("beginning_odometer").toString(),
 					array.getJSONObject(i).getString("ending_odometer").toString(),
 					array.getJSONObject(i).getString("alternate_Contact").toString(),
@@ -162,15 +161,15 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("insurance_1").toString(),
 					array.getJSONObject(i).getString("insurance_2").toString(),
 					array.getJSONObject(i).getString("Past_Medical_History").toString(),
-
 					array.getJSONObject(i).getString("Medications").toString(),
+					
+					
 					array.getJSONObject(i).getString("Allergies").toString(),
 					array.getJSONObject(i).getString("Blood_Pressure").toString(),
 					array.getJSONObject(i).getString("Pulse").toString(),
 					array.getJSONObject(i).getString("Respiratory_rate").toString(),
 					array.getJSONObject(i).getString("GCS").toString(),
 					array.getJSONObject(i).getString("Blood_sugar").toString(),
-
 					array.getJSONObject(i).getString("SpO2").toString(),
 					array.getJSONObject(i).getString("EtCO2").toString(),
 					array.getJSONObject(i).getString("HEENT").toString(),
@@ -178,7 +177,6 @@ public final class JsonParser {
 					array.getJSONObject(i).getString("Chest").toString(),
 					array.getJSONObject(i).getString("Abdomen").toString(),
 					array.getJSONObject(i).getString("Back").toString(),
-
 					array.getJSONObject(i).getString("Extremities").toString(),
 					array.getJSONObject(i).getString("Neurologic").toString(),
 					array.getJSONObject(i).getString("Treatment_Time").toString(),
@@ -203,12 +201,6 @@ public final class JsonParser {
 	public ArrayList<Report> getArrayList()
 	{
 		return reportList;
-	}
-	
-	/* This method will send a single report to the Database by HTTP post request */
-	public void sendToDB(Report report)
-	{
-		
 	}
 
 	/* Used to populate the titles on the ListView */
