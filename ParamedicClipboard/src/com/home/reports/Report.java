@@ -570,20 +570,49 @@ public class Report implements Serializable {
 	 * TODO: IMPLEMENT THIS TO DISPLAY THE EACH REPORT AS A STRING !!!!
 	 * 
 	 */
-	@Override
-	public String toString(){
-		
-		String string = "Name: " + this.getName() + "\n"
-						+ "Sex: " + this.getSex() + "\n";
-		
-		return string;
-	}
-
 	public String getHTMLString() {
 		// TODO Auto-generated method stub
-		String string = "<font color=\"white\"><b>Name: </b>" + " " + this.getName() + "</font><br/><br/>"
+		String string = "<font color=\"white\"><b>Name: </b>" + " " + this.getName() + "<br/><br/>"
 						+ "<b>Sex: </b>" + " " + this.getSex() + "<br/><br/>"
-						;
+						+ "<b>Ethnicity: </b>" + " " + this.getEthnicity() + "<br/><br/>"
+						+ "<b>DOB: </b>" + " " + this.getDOB() + "<br/><br/>"
+						+ "<b>SSAN: </b>" + " " + this.getSSN() + "<br/><br/>"
+						+ "<b>Address: </b>" + " " + this.getAddress() + "<br/><br/>"
+						+ "<b>Phone: </b>" + " " + this.getPhone() + "<br/><br/>"
+						+ "<b>Location of incident: </b>" + " " + this.getLocation_of_incident() + "<br/><br/>"
+						+ "<b>Type of incident: </b>" + " " + this.getType() + "<br/><br/>"
+						+ "<b>Disposition: </b>" + " " + this.getDisposition() + "<br/><br/>"
+						+ "<b>Destination: </b>" + " " + this.getDestination() + "<br/><br/>"
+						+ "<b>Beginning odometer: </b>" + " " + this.getBeginning_odometer() + "<br/><br/>"
+						+ "<b>Ending odometer: </b>" + " " + this.getEnding_odometer() + "<br/><br/>"
+						+ "<b>Alternate contact: </b>" + " " + this.getAlternate_contact() + "<br/><br/>"
+						+ "<b>Employer: </b>" + " " + this.getEmployer() + "<br/><br/>"
+						+ "<b>Insurance 1: </b>" + " " + this.getInsurance_1() + "<br/><br/>"
+						+ "<b>Insurance 2: </b>" + " " + this.getInsurance_2() + "<br/><br/>"
+						+ "<b>Past medical history: </b>" + " " + this.getPast_Medical_History() + "<br/><br/>"
+						+ "<b>Medications: </b>" + " " + this.getMedications() + "<br/><br/>"
+						+ "<b>Allergies: </b>" + " " + this.getAllergies() + "<br/><br/>"
+						+ "<b>Blood pressure: </b>" + " " + this.getBlood_Pressure() + "<br/><br/>"
+						+ "<b>Respiratory rate: </b>" + " " + this.getRespiratory_rate() + "<br/><br/>"
+						+ "<b>GCS: </b>" + " " + this.getGCS() + "<br/><br/>"
+						+ "<b>Blood sugar: </b>" + " " + this.getBlood_sugar() + "<br/><br/>"
+						+ "<b>SPo2: </b>" + " " + this.getSpO2() + "<br/><br/>"
+						+ "<b>ETCo2: </b>" + " " + this.getEtCO2() + "<br/><br/>"
+						+ "<b>Heent: </b>" + " " + this.getHEENT() + "<br/><br/>"
+						+ "<b>Neck: </b>" + " " + this.getNeck() + "<br/><br/>"
+						+ "<b>Chest: </b>" + " " + this.getChest() + "<br/><br/>"
+						+ "<b>Abdomen: </b>" + " " + this.getAbdomen() + "<br/><br/>"
+						+ "<b>Back: </b>" + " " + this.getBack() + "<br/><br/>"
+						+ "<b>Extremities: </b>" + " " + this.getExtremities() + "<br/><br/>"
+						+ "<b>Neurologic: </b>" + " " + this.getNeurologic() + "<br/><br/>"
+						+ "<b>Treatment time: </b>" + " " + this.getTreatment_Time() + "<br/><br/>"
+						+ "<b>Treatment modality: </b>" + " " + this.getTreatment_Modality() + "<br/><br/>"
+						+ "<b>Treatment dose: </b>" + " " + this.getTreatment_Dose() + "<br/><br/>"
+						+ "<b>Route: </b>" + " " + this.getRoute() + "<br/><br/>"
+						+ "<b>Authority: </b>" + " " + this.getAuthority() + "<br/><br/>"
+						+ "<b>Narrative: </b>" + " " + this.getNarrative() + "<br/><br/>"
+						+ "<b>Exam notes: </b>" + " " + this.getExam_Notes() + "<br/><br/>"
+						+ "</font>";
 		return string;
 	}
 }
