@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 import android.text.Html;
 
-public class Report implements Serializable {
+public class Report implements Serializable, Comparable<Report> {
 	
 	private String date_created;
 	private String destination;
@@ -619,5 +619,11 @@ public class Report implements Serializable {
 						+ "<b>Exam notes: </b>" + " " + this.getExam_Notes() + "<br/><br/>"
 						+ "</font>";
 		return string;
+	}
+
+	@Override
+	public int compareTo(Report arg0) {
+		// TODO Auto-generated method stub
+		return this.getDate_created().compareTo(arg0.getDate_created());
 	}
 }

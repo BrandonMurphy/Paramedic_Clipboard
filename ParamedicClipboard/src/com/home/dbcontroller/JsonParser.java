@@ -13,6 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -193,6 +194,9 @@ public final class JsonParser {
 			titles[i] = array.getJSONObject(i).getString("type_of_incident").toString();
 			subtitles[i] = array.getJSONObject(i).getString("id").toString();
 		}
+		
+		//sort the results in Descending order.
+		Collections.sort(reportList, Collections.reverseOrder());
 	}
 
 	/* This method returns the ArrayList that holds all the reports. */
