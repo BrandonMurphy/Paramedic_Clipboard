@@ -449,7 +449,7 @@ public class Report implements Serializable {
 		this.date_created = date_created;
 	}
 	
-	private String getDate_created() {
+	public String getDate_created() {
 		// TODO Auto-generated method stub
 		return this.date_created;
 	}

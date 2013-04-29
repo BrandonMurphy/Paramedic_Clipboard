@@ -2,14 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textColor="@color/White"
-    android:background="@color/Red" >
+    android:background="@color/DarkRed"
+    android:textColor="@color/White" >
 
     <LinearLayout
         android:id="@+id/details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Red"
+        android:background="@color/DarkRed"
         android:textColor="@color/White" >
         
     </LinearLayout>
