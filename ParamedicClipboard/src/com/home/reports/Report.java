@@ -332,6 +332,11 @@ public class Report implements Serializable {
 		Exam_Notes = exam_Notes;
 	}
 
+	public Report(String name)
+	{
+		this.setName(name);
+	}
+
 	public Report(
 			String date_created, 
 			String destination,

@@ -200,6 +200,12 @@ public final class JsonParser {
 	{
 		return reportList;
 	}
+	
+	/* This method will send a single report to the Database by HTTP post request */
+	public void sendToDB(Report report)
+	{
+		
+	}
 
 	/* Used to populate the titles on the ListView */
 	public String[] getTitles(){

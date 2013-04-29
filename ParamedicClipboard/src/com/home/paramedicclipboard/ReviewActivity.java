@@ -1,6 +1,5 @@
 package com.home.paramedicclipboard;
 
-import com.home.reports.Report;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -11,11 +10,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DetailsActivity extends Activity {
+import com.home.reports.Report;
+
+public class ReviewActivity extends Activity{
 
 	private final boolean DEBUG = false;
 	private Report report = null;
@@ -25,14 +25,14 @@ public class DetailsActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		if(DEBUG)Log.i("DetailsACtivity","Passes in the oncreate method");
-		setContentView(R.layout.reportdetails);
+		setContentView(R.layout.review);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.home, menu);
+	    inflater.inflate(R.menu.details, menu);
 	    return true;
 	}
 	
@@ -53,8 +53,8 @@ public class DetailsActivity extends Activity {
 		TextView text = new TextView(this);
 
 		// function call to get the string in HTML format
-		String string = report.getHTMLString();
-		
+		//String string = report.getHTMLString();
+		String string = "It has loaded !!!. The report name is : " + report.getName();
 		// error check
 		if(string == null || string == "")
 		{
@@ -80,24 +80,10 @@ public class DetailsActivity extends Activity {
 	            // app icon in action bar clicked; go home
 	            finish();
 	            return true;
-	        case R.id.add_report:
-	        	/* Class to assist us in loading the activity */
-				Class editClass = null;
-				try {
-					editClass = Class.forName("com.home.paramedicclipboard.AddReportActivity");
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-				/* Start the new intent */
-				Intent ourIntent = new Intent(DetailsActivity.this, editClass);
-				//start the activity
-				startActivity(ourIntent);
-	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
 	
 }
+

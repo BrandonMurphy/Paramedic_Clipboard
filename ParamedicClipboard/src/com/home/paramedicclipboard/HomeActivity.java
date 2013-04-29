@@ -168,6 +168,7 @@ public class HomeActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(final Boolean success) {
+			
 			/* Get a reference of the listview in our xml view */
 			listview = (ListView) findViewById(R.id.reportsList);
 
@@ -202,7 +203,7 @@ public class HomeActivity extends Activity {
 			}
 
 			//call to initialize the rest of the view
-			initialize();
+			initialize();	
 		}
 
 		//this is done in the background to load data.
@@ -217,19 +218,32 @@ public class HomeActivity extends Activity {
 		}
 	}
 
-	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	        case android.R.id.home:
 	            // app icon in action bar clicked; go home
-	            Intent intent = new Intent(this, HomeActivity.class);
-	            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-	            startActivity(intent);
+	            finish();
+	            return true;
+	        case R.id.add_report:
+	        	/* Class to assist us in loading the activity */
+				Class editClass = null;
+				try {
+					editClass = Class.forName("com.home.paramedicclipboard.AddReportActivity");
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				/* Start the new intent */
+				Intent ourIntent = new Intent(HomeActivity.this, editClass);
+				//start the activity
+				startActivity(ourIntent);
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
+	
 	
 }
